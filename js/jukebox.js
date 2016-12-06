@@ -14,17 +14,21 @@ function randomNumber() {
   return Math.floor(Math.random());
 }
 
-function menu() {
-  $('#menu').on('click', function(e) {
+function menu(){
+    $('#menu').on('click', menuOptions);
+  }
+
+   function menuOptions() {
     $('#menuOptions').html("You can play a song, pause a song, or view all the songs");
-  });
+  }
+
+function nowPlaying(){
+  $('#songPlaying').html("now playing " + songToPlay + " by " + theArtist);
+  return "now playing " + songToPlay + " by " + theArtist;
 }
 
 function play() {
-  $('#play').on('click', function(e) {
-    $('#songPlaying').html("now playing " + songToPlay + " by " + theArtist);
-    return "now playing " + songToPlay + " by " + theArtist;
-  });
+  $('#play').on('click', nowPlaying)
 }
 
 function pause() {
